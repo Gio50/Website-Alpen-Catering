@@ -1,0 +1,175 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Main Menu */
+.main-menu {
+    position: relative;
+    background-color: white;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center; /* Center menu items */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.main-menu a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 10px 20px; /* Consistent padding for all menu items */
+    display: flex; /* Use flexbox to center items vertically */
+    align-items: center; /* Align items vertically */
+}
+
+.menu-item {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Positioned below the main menu */
+    left: 0;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.menu-item:hover .submenu {
+    display: block;
+}
+
+.submenu a {
+    display: block;
+    color: #333;
+    padding: 10px 20px;
+    font-weight: normal;
+}
+
+.submenu a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Hero Slider */
+.hero {
+    position: relative;
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    overflow: hidden;
+    margin-left: calc(-50vw + 50%); /* Adjust for the left blank space */
+}
+
+.slider {
+    display: flex;
+    height: 100%;
+}
+
+.slide {
+    min-width: 100%; /* Ensure each slide takes the full width */
+    transition: 0.5s;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%; /* Ensure the images fill the height */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+/* Text Segment */
+.text-segment {
+    padding: 50px;
+    text-align: center;
+}
+
+.text-segment h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.text-segment p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 50px;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.gallery-item {
+    width: calc(33% - 10px);
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+footer a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .gallery-item {
+        width: calc(50% - 10px);
+    }
+
+    .text-segment h1 {
+        font-size: 2.5rem;
+    }
+
+    .text-segment p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .gallery-item {
+        width: 100%;
+    }
+
+    .main-menu a {
+        font-size: 1rem;
+    }
+}
+
