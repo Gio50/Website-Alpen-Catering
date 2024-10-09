@@ -5,25 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alpen-Catering</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header>
     <nav>
         <ul class="main-menu">
-            <li><a href="#">Unser Angebot</a>
+            <li><a href="angebot.html">Unser Angebot</a>
                 <ul class="dropdown">
-                    <li><a href="#">Raclette</a></li>
-                    <li><a href="#">Bratwurst</a></li>
-                    <li><a href="#">Rösti</a></li>
-                    <li><a href="#">Getränke</a></li>
+                    <li><a href="angebot.html#gerichte">Unsere Gerichte</a></li> <!-- Link to Gerichte anchor -->
+                    <li><a href="angebot.html#getraenke">Unsere Getränke</a></li> <!-- Link to Getränke anchor -->
+                    <li><a href="angebot.html#logmittel">Logistische Mittel</a></li> <!-- Link to Logistische Mittel anchor -->
+                    <li><a href="#">Vermietung</a></li> <!-- No link specified -->
                 </ul>
             </li>
-            <li><a href="#">Catering</a></li>
-            <li><a href="#">Logistische Mittel</a></li>
-            <li><a href="#">Vermietung</a></li>
-            <li><a href="#">Drive-In</a></li>
-            <li><a href="#">Kontakt</a></li>
+            <li><a href="catering.html">Catering</a></li> <!-- Link to new Catering page -->
+            <li><a href="drivein.html">Drive-In</a></li> <!-- Link to Drive-In page, create if needed -->
+            <li><a href="kontakt.html">Kontakt</a></li> <!-- Link to new Kontakt page -->
         </ul>
         <div class="hamburger" onclick="toggleMenu()">
             <div></div>
@@ -31,35 +30,49 @@
             <div></div>
         </div>
         <ul class="main-menu-mobile">
-            <li><a href="#">Unser Angebot</a>
-                <ul class="dropdown-mobile">
-                    <li><a href="#">Raclette</a></li>
-                    <li><a href="#">Bratwurst</a></li>
-                    <li><a href="#">Rösti</a></li>
-                    <li><a href="#">Getränke</a></li>
+            <li><a href="angebot.html">Unser Angebot</a>
+                <ul class="submenu-mobile">
+                    <li><a href="angebot.html#gerichte">Unsere Gerichte</a></li> <!-- Link to Gerichte anchor -->
+                    <li><a href="angebot.html#getraenke">Unsere Getränke</a></li> <!-- Link to Getränke anchor -->
+                    <li><a href="angebot.html#logmittel">Logistische Mittel</a></li> <!-- Link to Logistische Mittel anchor -->
+                    <li><a href="#">Vermietung</a></li> <!-- No link specified -->
                 </ul>
             </li>
-            <li><a href="#">Catering</a></li>
-            <li><a href="#">Logistische Mittel</a></li>
-            <li><a href="#">Vermietung</a></li>
-            <li><a href="#">Drive-In</a></li>
-            <li><a href="#">Kontakt</a></li>
+            <li><a href="catering.html">Catering</a></li> <!-- Link to new Catering page -->
+            <li><a href="drivein.html">Drive-In</a></li> <!-- Link to Drive-In page, create if needed -->
+            <li><a href="kontakt.html">Kontakt</a></li> <!-- Link to new Kontakt page -->
         </ul>
     </nav>
 </header>
+
 
 <div class="hero-slider">
     <img src="images/home_01.jpg" alt="Slider Image 1" class="slider-image active">
     <img src="images/home_02.jpg" alt="Slider Image 2" class="slider-image">
     <img src="images/home_03.jpg" alt="Slider Image 3" class="slider-image">
+
+    <!-- Hero Text Box -->
+    <div class="hero-text">
+        <h2>Catering beim Profi</h2>
+        <p>Profitieren Sie von unserer jahrelangen Erfahrung. Unser Angebot, Typisch schweizerische, frisch zubereitete Gerichte aus einheimischer Produktion. 
+        
+        Wir verfügen über eine Infrastruktur, welche für jeden Anlass entsprechend modular einsetzbar ist. Unser Personal, ausgebildete Fachkräfte, überzeugen auch Sie!
+        
+        Ihr zuverlässiger und erfahrener Catering Partner</p>
+    </div>
+
     <button class="scroll-btn" onclick="scrollToText()">
-        <img src="images/arrow_down.svg" alt="Scroll Down">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L12 22M12 22L6 16M12 22L18 16" stroke="black" stroke-width="2"/>
+        </svg>
     </button>
 </div>
 
 <div class="text-segment">
-    <h1>Willkommen bei Alpen-Catering</h1>
-    <p>Text text text text text. Text text text text text. Text text text text text.</p>
+    <h1>Catering beim Profi</h1>
+    <p><br>Profitieren Sie von unserer jahrelangen Erfahrung. Unser Angebot, Typisch schweizerische, frisch zubereitete Gerichte aus einheimischer Produktion.<br>
+    <br>Wir verfügen über eine Infrastruktur, welche für jeden Anlass entsprechend modular einsetzbar ist. Unser Personal, ausgebildete Fachkräfte, überzeugen auch Sie!<br>
+    <br>Ihr zuverlässiger und erfahrener Catering Partner</p>
 </div>
 
 <div class="gallery">
@@ -68,6 +81,7 @@
         <div class="gallery-item"><img src="images/img_01.jpg" alt="Project 1"></div>
         <div class="gallery-item"><img src="images/img_02.jpg" alt="Project 2"></div>
         <div class="gallery-item"><img src="images/img_03.jpg" alt="Project 3"></div>
+        <div class="gallery-item"><img src="images/img_03.jpg" alt="Project 4"></div>
     </div>
 </div>
 
@@ -84,10 +98,21 @@
 
     setInterval(showNextImage, 5000); // Change image every 5 seconds
 
-    function toggleMenu() {
-        const mobileMenu = document.querySelector('.main-menu-mobile');
-        mobileMenu.classList.toggle('active');
-    }
+function toggleMenu() {
+    const mobileMenu = document.querySelector('.main-menu-mobile');
+    mobileMenu.classList.toggle('active');
+}
+
+// Add a click event listener to the "Unser Angebot" item to toggle the dropdown
+document.addEventListener('DOMContentLoaded', () => {
+    const angebotItem = document.querySelector('.main-menu-mobile > li:nth-child(1) > a'); // Change index if needed
+    const dropdown = document.querySelector('.dropdown-mobile');
+
+    angebotItem.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent default link behavior
+        dropdown.classList.toggle('active'); // Toggle dropdown visibility
+    });
+});
 
     function scrollToText() {
         const textSegment = document.querySelector('.text-segment');

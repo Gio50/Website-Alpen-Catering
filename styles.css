@@ -3,6 +3,7 @@ body, h1, h2, p {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Playfair Display', serif; /* Apply Playfair Display font */
 }
 
 /* Header Styles */
@@ -85,14 +86,41 @@ header {
     transition: 0.3s;
 }
 
+/* Mobile Menu Styles */
 .main-menu-mobile {
-    display: none; /* Hide by default */
-    position: absolute; /* Position it */
-    top: 60px; /* Adjust according to your header height */
-    left: 0;
+    margin: 0;
+    list-style: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    display: none; /* Hide the mobile menu by default */
+    position: absolute; /* Position it absolutely */
+    top: 60px; /* Position it below the header */
+    left: 0; /* Align to the left */
     width: 100%; /* Full width */
-    background-color: white; /* Background color */
-    z-index: 1000; /* Make sure it's on top */
+    z-index: 1000; /* Ensure it's on top */
+    background-color: white; /* Set a background color */
+    border-top: 1px solid #ddd; /* Optional: add a border on top for separation */
+}
+
+/* Mobile Menu Items */
+.main-menu-mobile li {
+    margin: 0; /* Remove space between entries */
+    padding: 0 10px; /* Add padding for top and bottom, and adjust left/right */
+}
+
+.main-menu-mobile a {
+    display: block; /* Make links block-level */
+    padding: 15px; /* Adjust padding for button-like appearance */
+    text-align: left; /* Center text */
+    text-decoration: none; /* Remove underline */
+    color: black; /* Text color */
+    background-color: #f0f0f0; /* Light background for buttons */
+    border-bottom: 1px solid #ddd; /* Optional: border between items */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+.main-menu-mobile a:hover {
+    background-color: #007BFF; /* Change background color on hover */
+    color: white; /* Change text color on hover */
 }
 
 .main-menu-mobile.active {
@@ -105,79 +133,193 @@ header {
     margin: 0; /* Remove margin */
 }
 
+/* Submenu Styles */
+.submenu-mobile {
+    list-style: none; /* Remove bullets */
+    padding-left: 20px; /* Indent the submenu */
+    margin: 0; /* Remove margin */
+}
+
+.submenu-mobile li {
+    margin: 0; /* Remove space between entries */
+    padding: 0 0; /* Add padding for top and bottom, and adjust left/right */
+}
+
+.submenu-mobile a {
+    display: block; /* Make links block-level */
+    padding: 15px 15px 15px 45px; /* Top, Right, Bottom, Left */
+    text-align: left; /* Center text */
+    text-decoration: none; /* Remove underline */
+    color: black; /* Text color */
+    background-color: #f0f0f0; /* Light background for buttons */
+    border-bottom: 1px solid #ddd; /* Optional: border between items */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
 /* Hero Slider Styles */
 .hero-slider {
     position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    height: calc(100vh - 60px); /* Adjust 60px to match your header height */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.hero-text {
+    position: absolute; /* Position it absolutely within the slider */
+    top: 5%; /* Distance from the top of the slider */
+    left: 5%; /* Distance from the left */
+    max-width: 400px; /* Maximum width for the text box */
+    color: white; /* Text color */
+    background-color: rgba(0, 0, 0, 0); /* Semi-transparent background for readability */
+    padding: 20px; /* Padding inside the text box */
+    border-radius: 10px; /* Rounded corners */
+    z-index: 10; /* Ensure it is above the slider images */
+}
+
+.hero-text h2 {
+    margin: 0; /* Remove default margin */
+    font-size: 24px; /* Font size for the title */
+}
+
+.hero-text p {
+    margin-top: 10px; /* Space between title and paragraph */
+    font-size: 16px; /* Font size for the paragraph */
 }
 
 .slider-image {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 1s ease;
+    width: 100%; /* Make images responsive */
+    height: 100%; /* Make images fill the slider */
+    position: absolute; /* Position absolutely within the slider */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    opacity: 0; /* Hide by default */
+    transition: opacity 0.5s ease; /* Smooth transition */
 }
 
 .slider-image.active {
-    opacity: 1; /* Show the active image */
+    opacity: 1; /* Show active image */
 }
 
 .scroll-btn {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
+    position: absolute; /* Position it within the slider */
+    bottom: 20px; /* Distance from the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center alignment */
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding */
+    cursor: pointer; /* Pointer cursor */
+    z-index: 1000; /* Above other elements */
+}
+
+.scroll-btn:hover {
+    background-color: rgba(255, 255, 255, 1); /* Solid on hover */
 }
 
 /* Text Segment Styles */
 .text-segment {
     max-width: 1000px; /* Set max width */
     margin: 0 auto; /* Center the content */
-    padding: 20px; /* Add padding */
+    padding: 40px; /* Add padding */
 }
 
 /* Gallery Styles */
 .gallery {
-    max-width: 1000px; /* Set max width */
-    margin: 0 auto; /* Center the content */
-    padding: 20px; /* Add padding */
+    margin: 20px auto; /* Center gallery with margin */
+    max-width: 1000px; /* Limit max width */
+    padding: 0 40px; /* Add padding on sides */
 }
 
+.image-segment h1,
+.image-segment h2,
 .text-segment h1,
 .text-segment h2,
 .gallery h1,
 .gallery h2 {
     text-align: center; /* Center the headings */
+    margin-bottom: 20px; /* Adjust the value as needed */
 }
 
 .gallery-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 30px; /* Space between grid items */
+    grid-auto-rows: auto; /* Adjust rows to fit content */
 }
 
 .gallery-item {
-    margin: 10px; /* Space between items */
-    flex: 0 0 calc(33% - 20px); /* 3 items per row with margin */
-    box-sizing: border-box; /* Include padding and margin in width */
+    position: relative; /* Make the item a positioned element */
+    overflow: hidden; /* Ensure content does not overflow the item */
+    text-align: center; /* Center-align the text */
 }
 
 .gallery-item img {
-    width: 100%;
-    height: auto;
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensures images maintain their aspect ratio */
+}
+
+.gallery-item p {
+    position: absolute; /* Position the text absolutely */
+    bottom: 0; /* Position text at the bottom */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width of the item */
+    color: white; /* Text color */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 10px; /* Padding around the text */
+    text-align: center; /* Center-align the text */
+    font-size: 16px; /* Increase font size */
+    margin: 0; /* Remove default margin */
+}
+
+/* Image Segment Styles */
+.image-segment {
+    margin: 20px auto; /* Center the segment */
+    max-width: 1000px; /* Limit max width */
+    padding: 0 40px; /* Add padding on sides */
+}
+
+.image-segment h2 {
+    text-align: center; /* Center the heading */
+}
+
+.image-segment .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 10px; /* Space between items */
+}
+
+.image-segment .gallery-item {
+    position: relative; /* Set position relative for the overlay */
+    overflow: hidden; /* Hide overflow */
+}
+
+.image-segment .gallery-item img {
+    width: 100%; /* Full width of the grid item */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.image-segment .overlay-text {
+    position: absolute; /* Position the text absolutely */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    color: white; /* Text color */
+    background-color: rgba(0, 0, 0, 0); /* Semi-transparent background */
+    padding: 10px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center-align the text */
+    width: calc(100% - 20px); /* Adjust width to account for padding */
+    font-size: 48px; /* Increase font size */
+    font-weight: bold; /* Make text bold */
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+    .image-segment .overlay-text {
+    font-size: 24px; /* Increase font size */
+    font-weight: bold; /* Make text bold */
+}
     .main-menu {
         display: none; /* Hide main menu on mobile */
     }
@@ -187,7 +329,35 @@ header {
     }
 
     .gallery-item {
-        width: calc(50% - 10px); /* Adjust gallery item size on mobile */
+        aspect-ratio: 1 / 1; /* Square items on mobile */
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(150px, auto); /* Ensure rows are at least 150px high */
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures images maintain their aspect ratio */
+    }
+}
+
+@media (max-width: 480px) { /* Very small screens */
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Single column */
+        grid-auto-rows: minmax(150px, auto); /* Ensure rows are at least
+    }
+
+    .gallery-item {
+        aspect-ratio: 1 / 1; /* Square items on mobile */
+        width: 100%; /* Ensure it spans the full width */
+    }
+
+    .gallery-item img {
+        width: 100%; /* Ensure the image takes up the entire grid item */
+        height: auto; /* Maintain aspect ratio */
     }
 }
 
