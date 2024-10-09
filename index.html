@@ -1,74 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpen-Catering</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Catering Service</title>
 </head>
 <body>
-    <nav class="main-menu">
-        <div class="menu-item">
-            <a href="#">Unser Angebot</a>
-            <div class="submenu">
-                <a href="#">Raclette</a>
-                <a href="#">Bratwurst</a>
-                <a href="#">Rösti</a>
-                <a href="#">Getränke</a>
-            </div>
+
+<header>
+    <nav>
+        <ul class="main-menu">
+            <li><a href="#">Unser Angebot</a>
+                <ul class="dropdown">
+                    <li><a href="#">Raclette</a></li>
+                    <li><a href="#">Bratwurst</a></li>
+                    <li><a href="#">Rösti</a></li>
+                    <li><a href="#">Getränke</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Catering</a></li>
+            <li><a href="#">Logistische Mittel</a></li>
+            <li><a href="#">Vermietung</a></li>
+            <li><a href="#">Drive-In</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
-        <a href="#">Catering</a>
-        <a href="#">Logistische Mittel</a>
-        <a href="#">Vermietung</a>
-        <a href="#">Drive-In</a>
-        <a href="#">Kontakt</a>
+        <ul class="main-menu-mobile">
+            <li><a href="#">Unser Angebot</a>
+                <ul class="dropdown-mobile">
+                    <li><a href="#">Raclette</a></li>
+                    <li><a href="#">Bratwurst</a></li>
+                    <li><a href="#">Rösti</a></li>
+                    <li><a href="#">Getränke</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Catering</a></li>
+            <li><a href="#">Logistische Mittel</a></li>
+            <li><a href="#">Vermietung</a></li>
+            <li><a href="#">Drive-In</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
     </nav>
+</header>
 
-    <div class="hero">
-            <div class="slider">
-                <div class="slide"><img src="images/home_01" alt="Hero Image 1"></div>
-                <div class="slide"><img src="images/home_02.jpg" alt="Hero Image 2"></div>
-                <div class="slide"><img src="images/home_03.jpg" alt="Hero Image 3"></div>
-        </div>
+<div class="hero-slider">
+    <img src="images/home_01.jpg" alt="Slider Image 1" class="slider-image active">
+    <img src="images/home_02.jpg" alt="Slider Image 2" class="slider-image">
+    <img src="images/home_03.jpg" alt="Slider Image 3" class="slider-image">
+    <button class="scroll-btn" onclick="scrollToText()">
+        <img src="images/arrow_down.svg" alt="Scroll Down">
+    </button>
+</div>
+
+<div class="text-segment">
+    <h1>Willkommen bei Alpen-Catering</h1>
+    <p>Text text text text text. Text text text text text. Text text text text text.</p>
+</div>
+
+<div class="gallery">
+    <h2>Unsere Gerichte</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item"><img src="images/img_01.jpg" alt="Project 1"></div>
+        <div class="gallery-item"><img src="images/img_02.jpg" alt="Project 2"></div>
+        <div class="gallery-item"><img src="images/img_03.jpg" alt="Project 3"></div>
     </div>
+</div>
 
-    <div class="text-segment">
-        <h1>Wilkommen bei Alpen-Catering</h1>
-        <p>Text text text text text. Text text text text text. Text text text text text.</p>
-    </div>
+<script>
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.slider-image');
+    const totalImages = images.length;
 
-    <div class="gallery">
-        <h2>Unsere Gerichte</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="images/img_01.jpg" alt="Project 1"></div>
-                <div class="gallery-item"><img src="images/img_02.jpg" alt="Project 2"></div>
-                <div class="gallery-item"><img src="images/img_03.jpg" alt="Project 3"></div>
-        </div>
-    </div>
+    function showNextImage() {
+        images[currentIndex].classList.remove('active'); // Hide the current image
+        currentIndex = (currentIndex + 1) % totalImages; // Move to the next image
+        images[currentIndex].classList.add('active'); // Show the next image
+    }
 
-    <footer>
-        <a href="#">Kontakt</a>
-        <a href="#">Datenschutz</a>
-    </footer>
+    setInterval(showNextImage, 5000); // Change image every 5 seconds
 
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
+    function toggleMenu() {
+        const mobileMenu = document.querySelector('.main-menu-mobile');
+        mobileMenu.classList.toggle('active');
+    }
 
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.style.transform = `translateX(${(i - index) * 100}%)`;
-            });
-        }
+    function scrollToText() {
+        const textSegment = document.querySelector('.text-segment');
+        textSegment.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
 
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        setInterval(nextSlide, 5000);
-        showSlide(currentSlide);
-    </script>
 </body>
 </html>
 
