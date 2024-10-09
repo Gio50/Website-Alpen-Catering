@@ -344,20 +344,3 @@ header {
     }
 }
 
-@media (max-width: 480px) { /* Very small screens */
-    .gallery-grid {
-        grid-template-columns: 1fr; /* Single column */
-        grid-auto-rows: minmax(150px, auto); /* Ensure rows are at least
-    }
-
-    .gallery-item {
-        aspect-ratio: 1 / 1; /* Square items on mobile */
-        width: 100%; /* Ensure it spans the full width */
-    }
-
-    .gallery-item img {
-        width: 100%; /* Ensure the image takes up the entire grid item */
-        height: auto; /* Maintain aspect ratio */
-    }
-}
-
