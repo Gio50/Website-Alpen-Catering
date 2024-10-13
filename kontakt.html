@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Alpen-Catering</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul class="main-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="angebot.html">Unser Angebot</a>
+                <ul class="dropdown">
+                    <li><a href="angebot.html#gerichte">Unsere Gerichte</a></li>
+                    <li><a href="angebot.html#getraenke">Unsere Getränke</a></li>
+                    <li><a href="angebot.html#logmittel">Logistische Mittel</a></li>
+                    <li><a href="#">Vermietung</a></li>
+                </ul>
+            </li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="drivein.html">Drive-In</a></li>
+            <li><a href="uberuns.html">Über uns</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <ul class="main-menu-mobile">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="angebot.html">Unser Angebot</a>
+                <ul class="submenu-mobile">
+                    <li><a href="angebot.html#gerichte">Unsere Gerichte</a></li>
+                    <li><a href="angebot.html#getraenke">Unsere Getränke</a></li>
+                    <li><a href="angebot.html#logmittel">Logistische Mittel</a></li>
+                    <li><a href="#">Vermietung</a></li>
+                </ul>
+            </li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="drivein.html">Drive-In</a></li>
+            <li><a href="uberuns.html">Über uns</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="text-segment">
+    <h1>Kontakt</h1>
+    <p>Sie können uns jederzeit per Telefon oder E-Mail erreichen. Unser freundliches und kompetentes Team steht Ihnen gerne für Fragen, Buchungen und weitere Anliegen zur Verfügung.<br><br>
+    <strong>Telefon:</strong> 0123 456 789<br>
+    <strong>E-Mail:</strong> info@alpen-catering.de<br><br>
+    Wir freuen uns, von Ihnen zu hören!</p>
+</div>
+
+<script>
+    function toggleMenu() {
+        const mobileMenu = document.querySelector('.main-menu-mobile');
+        mobileMenu.classList.toggle('active');
+    }
+</script>
+
+</body>
+</html>
+

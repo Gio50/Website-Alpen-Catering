@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drive-In - Alpen-Catering</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul class="main-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="angebot.html">Unser Angebot</a>
+                <ul class="dropdown">
+                    <li><a href="angebot.html#gerichte">Unsere Gerichte</a></li>
+                    <li><a href="angebot.html#getraenke">Unsere Getränke</a></li>
+                    <li><a href="angebot.html#logmittel">Logistische Mittel</a></li>
+                    <li><a href="#">Vermietung</a></li>
+                </ul>
+            </li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="drivein.html">Drive-In</a></li>
+            <li><a href="uberuns.html">Über uns</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <ul class="main-menu-mobile">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="angebot.html">Unser Angebot</a>
+                <ul class="submenu-mobile">
+                    <li><a href="angebot.html#gerichte">Unsere Gerichte</a></li>
+                    <li><a href="angebot.html#getraenke">Unsere Getränke</a></li>
+                    <li><a href="angebot.html#logmittel">Logistische Mittel</a></li>
+                    <li><a href="#">Vermietung</a></li>
+                </ul>
+            </li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="drivein.html">Drive-In</a></li>
+            <li><a href="uberuns.html">Über uns</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="text-segment">
+    <h1>Drive-In</h1>
+    <p>Unser Drive-In-Service bietet Ihnen eine schnelle und unkomplizierte Möglichkeit, unsere leckeren Gerichte zu genießen. Einfach bestellen, abholen und mitnehmen!<br><br>
+    Egal ob unterwegs oder für einen gemütlichen Abend zu Hause – unser Drive-In-Service sorgt dafür, dass Sie auch spontan jederzeit bestens versorgt sind.</p>
+</div>
+
+<script>
+    function toggleMenu() {
+        const mobileMenu = document.querySelector('.main-menu-mobile');
+        mobileMenu.classList.toggle('active');
+    }
+</script>
+
+</body>
+</html>
+

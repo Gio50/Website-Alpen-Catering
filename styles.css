@@ -164,25 +164,29 @@ header {
 }
 
 .hero-text {
-    position: absolute; /* Position it absolutely within the slider */
-    top: 5%; /* Distance from the top of the slider */
-    left: 5%; /* Distance from the left */
-    max-width: 400px; /* Maximum width for the text box */
-    color: white; /* Text color */
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to exact center */
+    color: white;
     background-color: rgba(0, 0, 0, 0); /* Semi-transparent background for readability */
-    padding: 20px; /* Padding inside the text box */
-    border-radius: 10px; /* Rounded corners */
-    z-index: 10; /* Ensure it is above the slider images */
+    padding: 40px; /* Increase padding for more spacing */
+    border-radius: 10px;
+    text-align: center; /* Center the text */
+    z-index: 10;
+    width: 80%; /* Optional: Adjust width to control text wrapping */
 }
 
-.hero-text h2 {
-    margin: 0; /* Remove default margin */
-    font-size: 24px; /* Font size for the title */
+.hero-text h1 {
+    margin: 0;
+    font-size: 48px; /* Increase font size for the main heading */
+    font-weight: bold; /* Make the heading bold */
 }
 
 .hero-text p {
-    margin-top: 10px; /* Space between title and paragraph */
-    font-size: 16px; /* Font size for the paragraph */
+    margin-top: 20px;
+    font-size: 20px; /* Increase font size for the paragraph */
+    line-height: 1.6; /* Adjust line height for readability */
 }
 
 .slider-image {
@@ -220,7 +224,7 @@ header {
 .text-segment {
     max-width: 1000px; /* Set max width */
     margin: 0 auto; /* Center the content */
-    padding: 40px; /* Add padding */
+    padding: 40px 40px 40px 40px; /* Top, Right, Bottom, Left */
 }
 
 .text-segment p {
@@ -242,6 +246,7 @@ header {
 .gallery h2 {
     text-align: center; /* Center the headings */
     margin-bottom: 20px; /* Adjust the value as needed */
+    padding: 20px 0 0 0;/* Top, Right, Bottom, Left */
 }
 
 .gallery-grid {
@@ -393,6 +398,19 @@ header {
     .ornament-long {
         display: none; /* Hide desktop image */
     }    
+    
+    .hero-text h1 {
+    margin: 0;
+    font-size: 32px; /* Increase font size for the main heading */
+    font-weight: bold; /* Make the heading bold */
+}
+
+    .hero-text p {
+    margin-top: 20px;
+    font-size: 16px; /* Increase font size for the paragraph */
+    line-height: 1.6; /* Adjust line height for readability */
+}
+
 }
 
 /* For larger screens, hide mobile image */
