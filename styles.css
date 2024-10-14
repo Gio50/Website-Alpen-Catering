@@ -41,22 +41,30 @@ header {
     text-decoration: none;
     color: black;
     padding: 10px;
-    transition: color 0.3s;
+    transition: color 0.3s, background-color 0.3s;
 }
 
 .main-menu a:hover {
-    color: #007BFF;
+    color: white; /* Invert text color */
+    background-color: #8a8a8a; /* Button-like background on hover */
+    border-radius: 5px; /* Rounded hover effect */
 }
 
-/* Dropdown Styles */
+/* Updated Dropdown Styles */
 .dropdown {
+    list-style: none; /* Remove bullet points */
     display: none;
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 50%; /* Center dropdown horizontally */
+    transform: translateX(-50%); /* Shift dropdown to the center */
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Stronger shadow for emphasis */
     z-index: 1000;
+    border-radius: 10px; /* Rounded corners */
+    max-width: 300px; /* Limit the width */
+    width: auto; /* Ensure it's not full screen */
+    padding: 10px 0; /* Padding inside the dropdown */
 }
 
 .main-menu li:hover .dropdown {
@@ -65,10 +73,21 @@ header {
 
 .dropdown li {
     margin: 0;
+    padding: 0;
 }
 
 .dropdown a {
     padding: 10px 20px;
+    display: block;
+    text-align: left; /* Align text */
+    color: black;
+    transition: background-color 0.3s;
+    border-bottom: 1px solid #ddd; /* Optional separator */
+}
+
+.dropdown a:hover {
+    background-color: #f0f0f0; /* Background change on hover */
+    color: #8a8a8a;
 }
 
 /* Mobile Styles */
