@@ -8,7 +8,7 @@ body, h1, h2, p {
 
 /* Header Styles */
 header {
-    background-color: white;
+    background-color: #151530;
     position: relative;
     width: 100%;
     height: 60px;
@@ -39,7 +39,7 @@ header {
 
 .main-menu a {
     text-decoration: none;
-    color: black;
+    color: white;
     padding: 10px;
     transition: color 0.3s, background-color 0.3s;
 }
@@ -100,7 +100,7 @@ header {
 .hamburger div {
     width: 30px;
     height: 4px;
-    background-color: black;
+    background-color: white;
     margin: 5px 0;
     transition: 0.3s;
 }
@@ -175,6 +175,24 @@ header {
     transition: background-color 0.3s; /* Smooth transition on hover */
 }
 
+/* Small Hero Styles */
+.small-hero {
+    max-width: 1000px; /* Match max width with text-segment */
+    margin: 20px auto; /* Center the section and add spacing */
+    display: flex; /* Use flexbox to position the image */
+    justify-content: center; /* Center the image horizontally */
+    align-items: flex-end; /* Optional: Align the image towards the bottom */
+    height: 300px; /* Fixed height */
+    box-sizing: border-box; /* Include padding in total dimensions */
+    background-color: #f5f5f5; /* Optional background color */
+}
+
+.small-hero img {
+    width: 100%; /* Ensure the image scales within the container horizontally */
+    height: 100%; /* Stretch to the full height of the container */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
 /* Hero Slider Styles */
 .hero-slider {
     position: relative;
@@ -183,17 +201,19 @@ header {
 }
 
 .hero-text {
+    margin: 0 auto; /* Center horizontally */
     position: absolute;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust position to exact center */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: white;
-    background-color: rgba(0, 0, 0, 0); /* Semi-transparent background for readability */
-    padding: 40px; /* Increase padding for more spacing */
+    background-color: rgba(0, 0, 0, 0); /* Transparent background */
+    padding: 20px 40px; /* Match the padding of .text-segment */
     border-radius: 10px;
-    text-align: center; /* Center the text */
+    text-align: center;
     z-index: 10;
-    width: 80%; /* Optional: Adjust width to control text wrapping */
+    width: calc(100% - 80px); /* Matches 40px padding on both sides */
+    max-width: 1000px; /* Aligns with .text-segment's max width */
 }
 
 .hero-text h1 {
@@ -241,64 +261,139 @@ header {
 
 /* Text Segment Styles */
 .text-segment {
-    max-width: 1000px; /* Set max width */
-    margin: 0 auto; /* Center the content */
-    padding: 40px 40px 40px 40px; /* Top, Right, Bottom, Left */
+  max-width: 1000px; /* Set max width */
+  margin: 0 auto; /* Center the content */
+  padding: 20px 40px 20px 40px; /* Top, Right, Bottom, Left */
+  display: flex;  /* Enables flexbox layout */
+  align-items: flex-end;  /* Vertically centers the content */
+  justify-content: space-between;  /* Space between text and image */
 }
 
-.text-segment p {
-    text-align: justify;
+.text-content {
+  flex: 1;  /* Allows the text to take up remaining space */
+  margin-right: 20px;  /* Adds space between text and image */
 }
 
-/* Gallery Styles */
-.gallery {
-    margin: 20px auto 20px auto; /* Center gallery with margin */
-    max-width: 1000px; /* Limit max width */
-    padding: 0 40px; /* Add padding on sides */
+.image-content {
+    display: flex;
+    align-items: flex-end; /* Ensures the image aligns at the bottom */
 }
 
-.image-segment h1,
-.image-segment h2,
-.text-segment h1,
-.text-segment h2,
-.gallery h1,
-.gallery h2 {
-    text-align: center; /* Center the headings */
-    margin-bottom: 20px; /* Adjust the value as needed */
+.image-content img {
+    max-width: 100%; /* Makes the image responsive */
+    height: auto; /* Maintains the aspect ratio */
+    width: 350px; /* Adjust this width to make the image bigger */
+}
+
+.text-segment .text-content p,
+.text-segment .text-content ul li,
+.text-segment .text-content ul li strong,
+.text-segment .text-content h1,
+.text-segment .text-content h2 {
+    color: #151530; /* Replace with your desired color */
+}
+
+.text-segment .text-content ul {
     padding: 20px 0 0 0;/* Top, Right, Bottom, Left */
 }
 
+.text-segment p,
+.text-segment h1,
+.text-segment h2,
+.image-segment p,
+.image-segment h1,
+.image-segment h2,
+.gallery p,
+.gallery h1,
+.gallery h2 {
+    text-align: left; /* Center the headings */
+    padding: 20px 0 0 0;/* Top, Right, Bottom, Left */
+    color: #151530;
+}
+
+/* Fixed Segment Styles */
+.fixed-segment p {
+    padding: 20px 0 0 0;/* Top, Right, Bottom, Left */
+}
+.fixed-segment {
+    display: flex; /* Arrange the text and image side by side */
+    align-items: stretch; /* Ensure equal height for both sections */
+    width: 100%; /* Full width of the container */
+    max-width: 1000px; /* Optional: Set max width for layout */
+    margin: 20px auto; /* Center the container and add spacing */
+}
+
+.fixed-text-content {
+    flex: 0 0 50%; /* Fixed width: takes 50% of the container */
+    background-color: #151530; /* Background color for the text section */
+    color: white; /* White text */
+    padding: 40px; /* Padding inside the text container */
+    display: flex; /* Use flexbox for vertical alignment */
+    flex-direction: column; /* Stack text elements vertically */
+    justify-content: center; /* Center content vertically */
+    box-sizing: border-box; /* Includes padding in the total width/height */
+}
+
+.fixed-image-content {
+    flex: 0 0 50%; /* Fixed width: takes 50% of the container */
+    position: relative; /* Establish a positioning context for the image */
+    overflow: hidden; /* Prevent overflow if the image exceeds container size */
+}
+
+.fixed-image-content img {
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Stretch to fill the width */
+    height: 100%; /* Stretch to fill the height */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+
+/* Gallery Styles */
+.gallery {
+    margin: 20px auto; /* Center gallery vertically and horizontally */
+    max-width: 1000px; /* Limit the gallery width */
+    padding: 0 40px; /* Add padding to the sides */
+}
+
+/* Gallery Grid */
 .gallery-grid {
-    display: grid; /* Use CSS Grid for layout */
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
+    display: grid; /* Enable grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Flexible, responsive columns */
     gap: 30px; /* Space between grid items */
-    grid-auto-rows: auto; /* Adjust rows to fit content */
+    grid-auto-rows: auto; /* Let rows adjust to content height */
 }
 
 .gallery-item {
-    position: relative; /* Make the item a positioned element */
-    overflow: hidden; /* Ensure content does not overflow the item */
-    text-align: center; /* Center-align the text */
+    aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+    position: relative; /* For positioning the image */
+    overflow: hidden; /* Clip any overflow content */
 }
 
 .gallery-item img {
-    width: 100%; /* Make images responsive */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensures images maintain their aspect ratio */
+    position: absolute; /* Allows the image to fully cover the container */
+    top: 0;
+    left: 0;
+    width: 100%; /* Stretch the width to match the container */
+    height: 100%; /* Stretch the height to match the container */
+    object-fit: cover; /* Ensures the image fills the container while maintaining its aspect ratio */
+    object-position: center; /* Centers the image */
 }
 
+/* Caption/Text */
 .gallery-item p {
-    position: absolute; /* Position the text absolutely */
-    bottom: 0; /* Position text at the bottom */
-    left: 0; /* Align to the left */
-    width: 100%; /* Full width of the item */
-    color: white; /* Text color */
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    padding: 10px; /* Padding around the text */
-    text-align: center; /* Center-align the text */
-    font-size: 20px; /* Increase font size */
-    margin: 0; /* Remove default margin */
+    position: absolute; /* Overlay text over the image */
+    bottom: 0; /* Align text to the bottom of the item */
+    left: 0; /* Start text at the left edge */
+    width: 100%; /* Make text span the full width of the item */
+    color: white; /* White text for contrast */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    padding: 10px; /* Add padding inside the text box */
+    text-align: center; /* Center text horizontally */
+    font-size: 20px; /* Increase text size */
+    margin: 0; /* Remove default paragraph margin */
 }
+
 
 /* Image Segment Styles */
 .image-segment {
@@ -349,7 +444,7 @@ header {
     display: block;
     margin: 0 auto; /* Center the image on larger screens */
     padding: 0 40px; /* Padding to create space on left and right */
-    margin: 60px auto 60px auto; /* Center gallery with margin */
+    margin: 40px auto 40px auto; /* Center gallery with margin */
 }
 
 .description {
@@ -377,10 +472,12 @@ header {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+
     .image-segment .overlay-text {
-    font-size: 24px; /* Increase font size */
-    font-weight: bold; /* Make text bold */
-}
+        font-size: 24px; /* Increase font size */
+        font-weight: bold; /* Make text bold */
+    }
+
     .main-menu {
         display: none; /* Hide main menu on mobile */
     }
@@ -388,20 +485,27 @@ header {
     .hamburger {
         display: flex; /* Show hamburger on mobile */
     }
-
-    .gallery-item {
-        aspect-ratio: 1 / 1; /* Square items on mobile */
+    
+     .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on small screens */
+        grid-auto-rows: 1fr; /* Equal-height rows */
+        gap: 15px; /* Reduce gap for smaller screens */
     }
 
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: minmax(150px, auto); /* Ensure rows are at least 150px high */
+    .gallery-item {
+        aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+        overflow: hidden; /* Ensure images don't overflow */
+        position: relative; /* Ensure images and text are positioned correctly */
     }
 
     .gallery-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Ensures images maintain their aspect ratio */
+        position: absolute; /* Allow the image to fill the container */
+        top: 0;
+        left: 0;
+        width: 100%; /* Stretch to full width */
+        height: 100%; /* Stretch to full height */
+        object-fit: cover; /* Maintain aspect ratio, crop overflow */
+        object-position: center; /* Center the image */
     }
     
     .ornament {
@@ -409,27 +513,85 @@ header {
         width: calc(100% - 80px); /* Full width minus 40px padding on each side */
         padding: 0 40px; /* Padding to create space on left and right */
     }
-    
+
     /* For mobile-specific image */
     .ornament-short {
         display: block;
     }
+
     .ornament-long {
         display: none; /* Hide desktop image */
-    }    
-    
+    }
+
     .hero-text h1 {
-    margin: 0;
-    font-size: 32px; /* Increase font size for the main heading */
-    font-weight: bold; /* Make the heading bold */
-}
+        margin: 0;
+        font-size: 32px; /* Increase font size for the main heading */
+        font-weight: bold; /* Make the heading bold */
+    }
 
     .hero-text p {
-    margin-top: 20px;
-    font-size: 16px; /* Increase font size for the paragraph */
-    line-height: 1.6; /* Adjust line height for readability */
-}
+        margin-top: 20px;
+        font-size: 16px; /* Increase font size for the paragraph */
+        line-height: 1.6; /* Adjust line height for readability */
+    }
+    
+    .fixed-segment, .fixed-segment.reverse {
+        padding: 0 40px; /* Padding on left and right */
+        width: 80%;
+        margin: 0 auto; /* Center the container */
+    }
+    
+    .fixed-segment.reverse {
+        /* Explicitly keeps the same behavior as .fixed-segment */
+        flex-direction: column-reverse;
+    }
+    
+    .fixed-segment {
+        /* Explicitly keeps the same behavior as .fixed-segment */
+        flex-direction: column;
+    }
 
+    .fixed-text-content {
+        flex: 0 0 auto; /* Reset the flex behavior from desktop */
+        width: 100%; /* Text takes full width on mobile */
+        padding: 20px; /* Padding for text */
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    .fixed-image-content {
+        flex: 0 0 auto; /* Reset the flex behavior from desktop */
+        width: 100%;
+        height: auto; /* Make the image fill the container */
+    }
+
+    .fixed-image-content img {
+        width: 100%; /* Ensure the image stretches across the container */
+        height: auto; /* Make the image fill the container */
+        object-fit: cover; /* Ensure the image maintains its aspect ratio */
+    }
+    
+    .text-segment {
+        flex-direction: column; /* Stack text and image vertically */
+        align-items: flex-start; /* Align items to the start */
+        width: calc(100% - 80px); /* Full width minus 40px padding on each side */
+        padding: 0 40px; /* Padding to create space on left and right */
+    }
+
+    .text-content {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 20px; /* Add bottom margin for spacing */
+        width: 100%; /* Ensure the image stretches across the container */
+    }
+
+    .image-content {
+        align-items: center; /* Center the image horizontally */
+        width: 100%; /* Ensure the image stretches across the container */
+    }
+
+    .image-content img {
+        width: 100%; /* Ensure the image stretches across the container */
+        max-width: none; /* Remove desktop width limit */
+    }
 }
 
 /* For larger screens, hide mobile image */
@@ -445,17 +607,23 @@ header {
 @media (max-width: 480px) { /* Very small screens */
     .gallery-grid {
         grid-template-columns: 1fr; /* Single column */
-        grid-auto-rows: minmax(150px, auto); /* Ensure rows are at least
+        grid-auto-rows: minmax(150px, auto); /* Ensure rows */
     }
 
     .gallery-item {
-        aspect-ratio: 1 / 1; /* Square items on mobile */
-        width: 100%; /* Ensure it spans the full width */
+        aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+        overflow: hidden; /* Ensure images don't overflow */
+        position: relative; /* Ensure images and text are positioned correctly */
     }
 
     .gallery-item img {
-        width: 100%; /* Ensure the image takes up the entire grid item */
-        height: auto; /* Maintain aspect ratio */
+        position: absolute; /* Allow the image to fill the container */
+        top: 0;
+        left: 0;
+        width: 100%; /* Stretch to full width */
+        height: 100%; /* Stretch to full height */
+        object-fit: cover; /* Maintain aspect ratio, crop overflow */
+        object-position: center; /* Center the image */
     }
 }
 
